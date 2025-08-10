@@ -15,4 +15,5 @@ class Registration(generics.CreateAPIView):
         serializer.is_valid(raise_exception=True)
         user = serializer.save()
         headers = self.get_success_headers(serializer.data)
-        
+
+        return Response({'message':'Registration Successfully'}, status=status.HTTP_201_CREATED, headers=headers)
